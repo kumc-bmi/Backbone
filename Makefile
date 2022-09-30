@@ -2,7 +2,7 @@ all: .make.6_run_iteration_example
 
 
 flink_version=1.13.6
-scala_version=2.12
+scala_version=2.11
 flink_dir=flink-$(flink_version)
 flink_port=8088
 
