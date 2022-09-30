@@ -225,3 +225,7 @@ configs/
 resources/
 Backbone.zip
 
+#at KUMC
+flink-*/
+.make.*
+flink-*.tgz
