@@ -1,7 +1,7 @@
 all: .make.6_run_iteration_example
 
 
-flink_version=1.15.2
+flink_version=1.13.6
 scala_version=2.12
 flink_dir=flink-$(flink_version)
 flink_port=8088
@@ -11,8 +11,8 @@ flink_port=8088
 	java -version
 
 .make.2_download_flink:.make.1_java_version
-	wget -q https://dlcdn.apache.org/flink/$(flink_dir)/$(flink_dir)-bin-scala_$(scala_version).tgz
-	#wget -q https://dlcdn.apache.org/flink/$(flink_dir)$(flink_dir)-src.tgz
+	wget -q https://archive.apache.org/dist/flink/$(flink_dir)/$(flink_dir)-bin-scala_$(scala_version).tgz
+	#wget -q https://archive.apache.org/dist/flink/$(flink_dir)$(flink_dir)-src.tgz
 	touch $@
 
 .make.3_install_flink:.make.2_download_flink
