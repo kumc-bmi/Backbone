@@ -19,9 +19,8 @@ flink_dir=flink-$(flink_version)
 	tar -xzf flink-*.tgz
 	touch $@
 
-.make.4_start_cluster:
+.make.4_start_cluster:.make.stop_cluster
 	cd $(flink_dir) && ./bin/start-cluster.sh
-	touch $@
 
 .make.5_run_wordcount_example:.make.4_start_cluster
 	cd $(flink_dir) && ./bin/flink run examples/streaming/WordCount.jar
