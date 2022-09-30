@@ -9,10 +9,6 @@ flink_dir=flink-$(flink_version)
 .make.1_java_version:
 	#You need to have Java 11 installed :  https://nightlies.apache.org/flink/flink-docs-master/docs/try-flink/local_installation/
 	java -version
-	if [ "`java -version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1`" = "11" ]; then\
-        touch $@;\
-	else echo "ERROR: java version is not 11"; exit 1;\
-    fi
 
 .make.2_download_flink:.make.1_java_version
 	wget https://dlcdn.apache.org/flink/$(flink_dir)/$(flink_dir)-bin-scala_$(scala_version).tgz
